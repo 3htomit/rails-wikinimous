@@ -1,0 +1,11 @@
+<h1><%= @article.title %></h1>
+
+<p><strong>Content:</strong> <%= @article.content %></p>
+
+<br>
+<hr>
+
+<%= link_to "Back to articles list", articles_path, class: "btn btn-primary" %>
+<%= link_to "Edit the article", edit_article_path, class: "btn btn-outline-primary" %>
+<%= link_to "Delete the article", article_path(@article), method: :delete, data: { confirm: "Delete '#{@article.title}' ?" },
+    class: "btn btn-outline-danger" %>

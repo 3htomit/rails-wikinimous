@@ -1,0 +1,12 @@
+<h1>Articles list</h1>
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= article.title %> (<%= link_to "details", article_path(article.id) %>) |
+      <%= link_to "❌", article_path(article.id), method: :delete, data: { confirm: "Delete '#{article.title}' ?" } %>
+    </li>
+  <% end %>
+</ul>
+<br>
+<hr>
+<%= link_to "Add a new article", new_article_path, class: "btn btn-primary" %>
